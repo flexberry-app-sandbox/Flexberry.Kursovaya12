@@ -1,0 +1,39 @@
+﻿{
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Клиент",
+      "projection": "КлиентL",
+      "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Менеджер",
+      "projection": "МенеджерL",
+      "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Товар",
+      "projection": "ТоварL",
+      "detailModelName": null
+    }
+  ],
+  "external": false,
+  "caption": "Заказ",
+  "name": "IISKursovayaЗаказE",
+  "className": "ЗаказE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-kursovaya-заказ",
+      "modelProjection": "ЗаказE"
+    }
+  ]
+}

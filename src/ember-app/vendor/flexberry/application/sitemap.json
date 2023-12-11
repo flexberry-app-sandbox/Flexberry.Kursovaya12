@@ -1,0 +1,96 @@
+﻿{
+  "applicationCaption": "Kursovaya",
+  "applicationTitle": "Kursovaya",
+  "items": [
+    {
+      "link": null,
+      "menuName": "заказ",
+      "caption": "Заказ",
+      "title": "Заказ",
+      "children": [
+        {
+          "link": "i-i-s-kursovaya-заказ-l",
+          "menuName": null,
+          "caption": "Заказ",
+          "title": "",
+          "children": null
+        }
+      ]
+    },
+    {
+      "link": null,
+      "menuName": "справочник-по-товарам",
+      "caption": "Справочник по товарам",
+      "title": "Справочник по товарам",
+      "children": [
+        {
+          "link": "i-i-s-kursovaya-производитель-l",
+          "menuName": null,
+          "caption": "Производитель",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-kursovaya-поставщик-l",
+          "menuName": null,
+          "caption": "Поставщик",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-kursovaya-товар-l",
+          "menuName": null,
+          "caption": "Товар",
+          "title": "",
+          "children": null
+        }
+      ]
+    },
+    {
+      "link": null,
+      "menuName": "клиенты",
+      "caption": "Клиенты",
+      "title": "Клиенты",
+      "children": [
+        {
+          "link": "i-i-s-kursovaya-клиент-l",
+          "menuName": null,
+          "caption": "Клиент",
+          "title": "",
+          "children": null
+        }
+      ]
+    },
+    {
+      "link": null,
+      "menuName": "менеджеры",
+      "caption": "Менеджеры",
+      "title": "Менеджеры",
+      "children": [
+        {
+          "link": "i-i-s-kursovaya-менеджер-l",
+          "menuName": null,
+          "caption": "Менеджер",
+          "title": "",
+          "children": null
+        }
+      ]
+    },
+    {
+      "link": null,
+      "menuName": "оплата",
+      "caption": "Оплата",
+      "title": "Оплата",
+      "children": [
+        {
+          "link": "i-i-s-kursovaya-оплата-l",
+          "menuName": null,
+          "caption": "Оплата",
+          "title": "",
+          "children": null
+        }
+      ]
+    }
+  ],
+  "mobile": true
+}

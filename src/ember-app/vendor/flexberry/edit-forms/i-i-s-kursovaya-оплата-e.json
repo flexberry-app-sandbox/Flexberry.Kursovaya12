@@ -1,0 +1,23 @@
+﻿{
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Заказ",
+      "projection": "ЗаказL",
+      "detailModelName": null
+    }
+  ],
+  "external": false,
+  "caption": "Оплата",
+  "name": "IISKursovayaОплатаE",
+  "className": "ОплатаE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-kursovaya-оплата",
+      "modelProjection": "ОплатаE"
+    }
+  ]
+}

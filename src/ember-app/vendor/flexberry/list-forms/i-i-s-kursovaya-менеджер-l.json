@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-kursovaya-менеджер-e",
+  "editForm": "i-i-s-kursovaya-менеджер-e",
+  "external": false,
+  "caption": "Менеджер",
+  "name": "IISKursovayaМенеджерL",
+  "className": "МенеджерL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-kursovaya-менеджер",
+      "modelProjection": "МенеджерL"
+    }
+  ]
+}

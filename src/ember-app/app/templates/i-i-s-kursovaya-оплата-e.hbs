@@ -1,0 +1,86 @@
+<h3 class="ui header">{{t "forms.i-i-s-kursovaya-оплата-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field" data-test-i-i-s-kursovaya-оплата-e-способ="true">
+    <label>{{t "forms.i-i-s-kursovaya-оплата-e.способ-caption"}}</label>
+    {{flexberry-dropdown
+      items=(flexberry-enum "i-i-s-kursovaya-способ1")
+      value=model.способ
+      class=(if (v-get validationModel "способ" "isInvalid") "error")
+      readonly=readonly
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "способ" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.сумма
+      class=(if (v-get validationModel "сумма" "isInvalid") "error")
+      label=(t "forms.i-i-s-kursovaya-оплата-e.сумма-caption")
+      data-test-i-i-s-kursovaya-оплата-e-сумма=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "сумма" "message")}}
+  </div>
+  <div class="field" data-test-i-i-s-kursovaya-оплата-e-статус="true">
+    <label>{{t "forms.i-i-s-kursovaya-оплата-e.статус-caption"}}</label>
+    {{flexberry-dropdown
+      items=(flexberry-enum "i-i-s-kursovaya-статус-оплаты")
+      value=model.статус
+      class=(if (v-get validationModel "статус" "isInvalid") "error")
+      readonly=readonly
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "статус" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-kursovaya-оплата-e.дата-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=readonly
+      value=model.дата
+      class=(if (v-get validationModel "дата" "isInvalid") "error")
+      data-test-i-i-s-kursovaya-оплата-e-дата=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "дата" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-kursovaya-оплата-e.заказ-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.заказ
+      displayAttributeName="номерЗаказа"
+      autocomplete=true
+      relationName="заказ"
+      projection="ЗаказL"
+      title=(t "forms.i-i-s-kursovaya-оплата-e.заказ-caption")
+      readonly=readonly
+      componentName="заказLookup"
+      class=(if (v-get validationModel "заказ" "isInvalid") "error")
+      data-test-i-i-s-kursovaya-оплата-e-заказ=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "заказ" "message")}}
+  </div>
+</form>

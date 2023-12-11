@@ -1,0 +1,197 @@
+﻿{
+  "name": "IISKursovayaТовар",
+  "modelName": "i-i-s-kursovaya-товар",
+  "className": "Товар",
+  "nameSpace": "IIS.Kursovaya",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "изображение",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "наименование",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "свойства",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "поставщик",
+      "relatedTo": "i-i-s-kursovaya-поставщик",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "производитель",
+      "relatedTo": "i-i-s-kursovaya-производитель",
+      "inverse": null
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ТоварE",
+      "modelName": "i-i-s-kursovaya-товар",
+      "attrs": [
+        {
+          "name": "наименование",
+          "caption": "Наименование",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "изображение",
+          "caption": "Изображение",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "свойства",
+          "caption": "Свойства",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "Поставщик",
+          "lookupValueField": "поставщик",
+          "relationName": "Поставщик",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "поставщик",
+              "caption": "Поставщик",
+              "hidden": true,
+              "index": 4
+            }
+          ],
+          "index": 3,
+          "type": "standard",
+          "caption": "Поставщик",
+          "name": "поставщик",
+          "relatedTo": "i-i-s-kursovaya-поставщик",
+          "inverse": null
+        },
+        {
+          "lookupValue": "Производитель",
+          "lookupValueField": "производитель",
+          "relationName": "Производитель",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "производитель",
+              "caption": "Производитель",
+              "hidden": true,
+              "index": 6
+            }
+          ],
+          "index": 5,
+          "type": "standard",
+          "caption": "Производитель",
+          "name": "производитель",
+          "relatedTo": "i-i-s-kursovaya-производитель",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    },
+    {
+      "name": "ТоварL",
+      "modelName": "i-i-s-kursovaya-товар",
+      "attrs": [
+        {
+          "name": "наименование",
+          "caption": "Наименование",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "изображение",
+          "caption": "Изображение",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "свойства",
+          "caption": "Свойства",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Поставщик",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "поставщик",
+              "caption": "Поставщик",
+              "hidden": false,
+              "index": 3
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Поставщик",
+          "name": "поставщик",
+          "relatedTo": "i-i-s-kursovaya-поставщик",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Производитель",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "производитель",
+              "caption": "Производитель",
+              "hidden": false,
+              "index": 4
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Производитель",
+          "name": "производитель",
+          "relatedTo": "i-i-s-kursovaya-производитель",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

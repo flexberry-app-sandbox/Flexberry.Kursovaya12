@@ -1,0 +1,126 @@
+<h3 class="ui header">{{t "forms.i-i-s-kursovaya-заказ-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.номерЗаказа
+      class=(if (v-get validationModel "номерЗаказа" "isInvalid") "error")
+      label=(t "forms.i-i-s-kursovaya-заказ-e.номерЗаказа-caption")
+      data-test-i-i-s-kursovaya-заказ-e-номерЗаказа=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "номерЗаказа" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-kursovaya-заказ-e.дата-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=readonly
+      value=model.дата
+      class=(if (v-get validationModel "дата" "isInvalid") "error")
+      data-test-i-i-s-kursovaya-заказ-e-дата=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "дата" "message")}}
+  </div>
+  <div class="field" data-test-i-i-s-kursovaya-заказ-e-доставка="true">
+    <label>{{t "forms.i-i-s-kursovaya-заказ-e.доставка-caption"}}</label>
+    {{flexberry-dropdown
+      items=(flexberry-enum "i-i-s-kursovaya-тип-доставки")
+      value=model.доставка
+      class=(if (v-get validationModel "доставка" "isInvalid") "error")
+      readonly=readonly
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "доставка" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-kursovaya-заказ-e.клиент-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.клиент
+      displayAttributeName="фамилия"
+      autocomplete=true
+      relationName="клиент"
+      projection="КлиентL"
+      title=(t "forms.i-i-s-kursovaya-заказ-e.клиент-caption")
+      readonly=readonly
+      componentName="клиентLookup"
+      class=(if (v-get validationModel "клиент" "isInvalid") "error")
+      data-test-i-i-s-kursovaya-заказ-e-клиент=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "клиент" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-kursovaya-заказ-e.менеджер-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.менеджер
+      displayAttributeName="фамилия"
+      autocomplete=true
+      relationName="менеджер"
+      projection="МенеджерL"
+      title=(t "forms.i-i-s-kursovaya-заказ-e.менеджер-caption")
+      readonly=readonly
+      componentName="менеджерLookup"
+      class=(if (v-get validationModel "менеджер" "isInvalid") "error")
+      data-test-i-i-s-kursovaya-заказ-e-менеджер=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "менеджер" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-kursovaya-заказ-e.товар-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.товар
+      displayAttributeName="наименование"
+      autocomplete=true
+      relationName="товар"
+      projection="ТоварL"
+      title=(t "forms.i-i-s-kursovaya-заказ-e.товар-caption")
+      readonly=readonly
+      componentName="товарLookup"
+      class=(if (v-get validationModel "товар" "isInvalid") "error")
+      data-test-i-i-s-kursovaya-заказ-e-товар=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "товар" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-kursovaya-заказ-e.товары-caption"}}</label>
+    {{flexberry-groupedit
+      componentName="товарыGroupEdit"
+      mainModelProjection=modelProjection
+      modelProjection=modelProjection.attributes.товары
+      content=model.товары
+      readonly=readonly
+      orderable=false
+      class=(if (v-get validationModel "товары" "isInvalid") "error")
+      data-test-i-i-s-kursovaya-заказ-e-товары=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "товары" "message")}}
+  </div>
+</form>

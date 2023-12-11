@@ -1,0 +1,31 @@
+﻿{
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Поставщик",
+      "projection": "ПоставщикL",
+      "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Производитель",
+      "projection": "ПроизводительL",
+      "detailModelName": null
+    }
+  ],
+  "external": false,
+  "caption": "Товар",
+  "name": "IISKursovayaТоварE",
+  "className": "ТоварE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-kursovaya-товар",
+      "modelProjection": "ТоварE"
+    }
+  ]
+}

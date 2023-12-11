@@ -1,0 +1,8 @@
+﻿{
+  "nameSpace": "IIS.Kursovaya",
+  "className": "ТипДоставки",
+  "enumObjects": {
+    "Курьер": "Курьер",
+    "Самовывоз": "Самовывоз"
+  }
+}

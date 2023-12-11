@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-kursovaya-поставщик-e",
+  "editForm": "i-i-s-kursovaya-поставщик-e",
+  "external": false,
+  "caption": "Поставщик",
+  "name": "IISKursovayaПоставщикL",
+  "className": "ПоставщикL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-kursovaya-поставщик",
+      "modelProjection": "ПоставщикL"
+    }
+  ]
+}

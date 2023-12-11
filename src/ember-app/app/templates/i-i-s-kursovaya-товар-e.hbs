@@ -1,0 +1,93 @@
+<h3 class="ui header">{{t "forms.i-i-s-kursovaya-товар-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.наименование
+      class=(if (v-get validationModel "наименование" "isInvalid") "error")
+      label=(t "forms.i-i-s-kursovaya-товар-e.наименование-caption")
+      data-test-i-i-s-kursovaya-товар-e-наименование=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "наименование" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.изображение
+      class=(if (v-get validationModel "изображение" "isInvalid") "error")
+      label=(t "forms.i-i-s-kursovaya-товар-e.изображение-caption")
+      data-test-i-i-s-kursovaya-товар-e-изображение=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "изображение" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.свойства
+      class=(if (v-get validationModel "свойства" "isInvalid") "error")
+      label=(t "forms.i-i-s-kursovaya-товар-e.свойства-caption")
+      data-test-i-i-s-kursovaya-товар-e-свойства=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "свойства" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-kursovaya-товар-e.поставщик-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.поставщик
+      displayAttributeName="поставщик"
+      autocomplete=true
+      relationName="поставщик"
+      projection="ПоставщикL"
+      title=(t "forms.i-i-s-kursovaya-товар-e.поставщик-caption")
+      readonly=readonly
+      componentName="поставщикLookup"
+      class=(if (v-get validationModel "поставщик" "isInvalid") "error")
+      data-test-i-i-s-kursovaya-товар-e-поставщик=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "поставщик" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-kursovaya-товар-e.производитель-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.производитель
+      displayAttributeName="производитель"
+      autocomplete=true
+      relationName="производитель"
+      projection="ПроизводительL"
+      title=(t "forms.i-i-s-kursovaya-товар-e.производитель-caption")
+      readonly=readonly
+      componentName="производительLookup"
+      class=(if (v-get validationModel "производитель" "isInvalid") "error")
+      data-test-i-i-s-kursovaya-товар-e-производитель=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "производитель" "message")}}
+  </div>
+</form>
